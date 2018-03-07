@@ -19,7 +19,6 @@ def pin():
 
 def start_menu():
     balance=1000000
-   
     print('Thank You For choosing the ATM-O-TRONIC 5000 available only on python.')
     print("Java, HTML, C++ as well as many more programming languages soon to come. c:")
     print("PSSSSSTTTTT... For future references; your pin is hidden in the machines name") 
@@ -30,25 +29,26 @@ def start_menu():
             print('2 for Withdrawal\n')
             print('3 for Deposit\n')
             print('4 To Exit\n')
+            print('0 To End\n')
 
             transaction = int(input('Choose which transaction best fits your needs today:'))
             if transaction == 1:
                 print('Your Balance is $',balance,'\n')
-                restart = input('Would You you like to go back? ')
+                restart = input('Would You you like to go back?Press 4 ')
                 if restart in ('NO','no'):
-                    print('Thank you enjoy the remainder of your day  type start_menu()')
+                    print('Thank you enjoy the remainder of your day ',start_menu(),)
                  
             elif transaction == 2:
                 
-                withdrawl = float(input('How Much Would you like to  withdraw? \n$10 $20 $40 $60 $80 $100 :'))
-                if withdrawl in [10, 20, 40, 60, 80, 100]:
-                    balance = balance - withdrawl
+                withdrawal = float(input('How Much Would you like to  withdraw? \n$10 $20 $40 $60 $80 $100 :'))
+                if withdrawal in [10, 20, 40, 60, 80, 100]:
+                    balance = balance - withdrawal
                     print ('\nYour Balance is now $',balance)
-                    restart = input('Would You you like to go back? ')
+                    restart = input('Would You you like to go back? Press 4 ')
                     if restart in ('NO','no'):
-                        print('Thank you enjoy the remainder of your day  type start_menu() ')
+                        print('Thank you enjoy the remainder of your day   ',start_menu,)
                     
-                elif withdrawl != [10, 20, 40, 60, 80, 100]:
+                elif withdrawal != [10, 20, 40, 60, 80, 100]:
                     print('Invalid Amount, Please Re-try\n')
                     restart = ('yes')
                 
@@ -56,17 +56,20 @@ def start_menu():
                 deposit = float(input('How much money would you want our trustworthy money elves to protect?  '))
                 balance = balance + deposit
                 print('Your Balance is $',balance,'\n')
-                restart = input('Would You you like to go back? ')
+                restart = input('Press 4 to exit? ')
                 if restart in ('NO','no'):
-                    print('Thank You, enjoy the remainder of your day type start_menu() ')
+                    print('Thank You, enjoy the remainder of your day  ',start_menu(),)
                
             elif transaction == 4:
                 
                 print('Thank you for choosing ATM-O-TRONIC 5000\n')
-              
+           
+            
+            elif transaction == 0:
+                return pin()
         
 
-    print("Exiting Program, type start_menu() ")
+    return("Exiting Program, type start_menu() ",start_menu())
 
 start_menu()
 
